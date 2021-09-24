@@ -15,7 +15,7 @@ var Tilko = Tilko || {};
     
     try {
         // API 상세설명 URL
-		// https://tilko.net/Help/Api/POST-api-apiVersion-Nhis-Ggpab003M0105
+        // https://tilko.net/Help/Api/POST-api-apiVersion-Nhis-Ggpab003M0105
 
         let _rest = new Rest(_apiKey);
         _rest.Init();
