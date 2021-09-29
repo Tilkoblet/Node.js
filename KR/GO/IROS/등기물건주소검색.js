@@ -21,7 +21,7 @@ var Tilko = Tilko || {};
     
         // API 호출
         const response = _rest.Call();
-        console.log("response:", response);
+        console.log("response:", JSON.stringify(response));
     } catch (e) {
         console.error(e);
     }

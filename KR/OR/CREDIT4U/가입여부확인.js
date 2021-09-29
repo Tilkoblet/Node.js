@@ -14,14 +14,14 @@ var Tilko = Tilko || {};
         _rest.SetEndPointUrl("https://api.tilko.net/api/v1.0/credit4u/checkedlogin");
 
         // Body 추가
-        _rest.AddBody("UserID", "userid", true);
-        _rest.AddBody("UserPassword", "userpw", true);
+        _rest.AddBody("UserID", "UserID", true);
+        _rest.AddBody("UserPassword", "UserPassword", true);
 
         // API 호출
         const response = _rest.Call();
-        console.log("response:", response);
+        console.log("response:", JSON.stringify(response));
     } catch (e) {
         console.error(e);
     }
-
+    
 })(Tilko);

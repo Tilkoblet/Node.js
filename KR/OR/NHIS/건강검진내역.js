@@ -5,13 +5,13 @@ var Tilko = Tilko || {};
 
 (function (_Tilko) {
 
-    const _apiKey = "";
+    const _apiKey = "발급받은 API KEY";
     
     try {
         let _rest = new Rest(_apiKey);
         _rest.Init();
 
-        // 건강보험공단의 건강검진결과 endPoint 설정
+        // 건강보험공단의 건강검진내역 endPoint 설정
         _rest.SetEndPointUrl("https://api.tilko.net/api/v1.0/nhis/ggpab003m0105");
 
         /**
@@ -36,7 +36,7 @@ var Tilko = Tilko || {};
         
         // API 호출
         const response = _rest.Call();
-        console.log("response:", response);
+        console.log("response:", JSON.stringify(response));
     } catch (e) {
         console.error(e);
     }
