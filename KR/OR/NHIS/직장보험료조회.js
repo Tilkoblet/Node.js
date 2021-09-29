@@ -5,6 +5,9 @@ var Tilko = Tilko || {};
 
 (function (_Tilko) {
 
+    // API 상세설명 URL
+    // https://tilko.net/Help/Api/POST-api-apiVersion-Nhis-JpZaa00110
+    
     const _apiKey = "발급받은 API KEY";
     
     try {
@@ -32,7 +35,7 @@ var Tilko = Tilko || {};
         // Body 추가
         _rest.AddBody("CertFile", _publicCert, true);
         _rest.AddBody("KeyFile", _privateKey, true);
-        _rest.AddBody("CertPassword", "password", true);
+        _rest.AddBody("CertPassword", "인증서암호", true);
         _rest.AddBody("Year", "2020", false);
 
         // API 호출

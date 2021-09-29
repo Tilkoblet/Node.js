@@ -4,6 +4,9 @@ var Tilko = Tilko || {};
 
 (function (_Tilko) {
 
+    // API 상세설명 URL
+    // https://tilko.net/Help/Api/POST-api-apiVersion-Iros-RISUConfirmSimpleC
+    
     const _apiKey = "발급받은 API KEY";
 
     try {
