@@ -1,4 +1,6 @@
+const FS = require("fs");
 const Rest = require("../../../REST").Tilko.API.REST;
+const Constant = require("../../../Constant").Constant;
 
 var Tilko = Tilko || {};
 
@@ -7,14 +9,12 @@ var Tilko = Tilko || {};
     // API 상세설명 URL
     // https://tilko.net/Help/Api/POST-api-apiVersion-Iros-RISURetrieve
     
-    const _apiKey = "";
-
     try {
-        let _rest = new Rest(_apiKey);
+        let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
         // 인터넷등기소의 등기부등본 조회 endPoint 설정
-        _rest.SetEndPointUrl("https://api.tilko.net/api/v1.0/iros/risuretrieve");
+        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/iros/risuretrieve");
         
         // Body 추가
         _rest.AddBody("IrosID", "", true);          // [암호화] iros.go.kr 로그인 ID(Base64 인코딩)
@@ -30,8 +30,10 @@ var Tilko = Tilko || {};
         _rest.AddBody("IsSummary", "Y", false);     // 요약데이터 표시여부(Y/N 공백 또는 다른 문자열일 경우 기본값 Y)
         
         // API 호출
-        const response = _rest.Call();
-        console.log("response:", JSON.stringify(response));
+        const Response = _rest.Call();
+        console.log("Response:", Response);
+
+        console.log("TransactionKey:", Response.TransactionKey);
     } catch (e) {
         console.error(e);
     }
