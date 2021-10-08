@@ -1,5 +1,6 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
+const Constant = require("./Constant").Constant;
 const Request = require("sync-request");
 const Crypto = require("crypto");
 const Aes = require("./Encryption/AES").Tilko.API.Encryption.AES;
@@ -11,7 +12,6 @@ var Tilko = Tilko || {};
 Tilko.API = {};
 Tilko.API.REST = class {
     
-    _apiServer = "https://api.tilko.net";
     _endPointUrl = "";
     _apiKey = "";                   // API키
     _aesKey = Buffer.alloc(16);     // AES 암호화에 사용할 키
@@ -39,7 +39,7 @@ Tilko.API.REST = class {
     }
 
     GetPublicKey() {
-        const uri = this._apiServer + "/api/Auth/GetPublicKey?APIkey=" + this._apiKey;
+        const uri = Constant.ApiHost + "/api/Auth/GetPublicKey?APIkey=" + this._apiKey;
         const options = {
             json: true,
         };

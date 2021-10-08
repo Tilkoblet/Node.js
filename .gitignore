@@ -119,3 +119,6 @@ dist
 
 # vscode
 .vscode
+
+# Dev Files
+ConstantLocal.js
