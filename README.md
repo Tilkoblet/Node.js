@@ -1,8 +1,16 @@
 # Node.js
 Node.js 프로젝트의 소스코드입니다.
 
-아래는 국민건강보험공단의 건강검진내역 API를 호출하는 사용법입니다.
+## 모듈 설치
+```
+package.json 참조
 
+npm install --save request
+npm install --save node-rsa
+npm install --save sync-request
+```
+
+## 샘플 코드 (API 호출)
 ```javascript
 const FS = require("fs");
 const Rest = require("../../../REST").Tilko.API.REST;
