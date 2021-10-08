@@ -13,8 +13,8 @@ npm install --save sync-request
 ## 샘플 코드 (API 호출)
 ```javascript
 const FS = require("fs");
-const Rest = require("../../../REST").Tilko.API.REST;
-const Constant = require("../../../Constant").Constant;
+const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
@@ -27,7 +27,7 @@ var Tilko = Tilko || {};
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 국민건강보험공단의 건강검진내역 endPoint 설정
+        // 건강보험공단의 건강검진내역 endPoint 설정
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/nhis/ggpab003m0105");
 
         // 공동인증서 경로 설정
