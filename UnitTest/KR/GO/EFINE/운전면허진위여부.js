@@ -1,4 +1,3 @@
-const FS = require("fs");
 const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
 const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
 
@@ -19,7 +18,7 @@ var Tilko = Tilko || {};
         // Body 추가
         _rest.AddBody("BirthDate", "", false);                  // 대상자 생년월일(yyyyMMdd)
         _rest.AddBody("Name", "", false);                       // 대상자 성명
-        _rest.AddBody("LicNumber", "XX-XX-XXXXXX-XX", true);    // [암호화] 운전면허번호(예: 서울-XX-XXXXXX-XX / Base64 인코딩)
+        _rest.AddBody("LicNumber", "", true);    // [암호화] 운전면허번호(예: 서울-XX-XXXXXX-XX / Base64 인코딩)
         _rest.AddBody("SpecialNumber", "", true);               // [암호화] 식별번호(면허증 우측 하단 작은 사진 밑에 있는 일련번호 / Base64 인코딩)
         
         // API 호출
