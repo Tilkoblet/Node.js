@@ -41,7 +41,7 @@ var Tilko = Tilko || {};
         _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 건강보험공단의 건강검진내역 조회 endPoint 설정
+        // 건강보험공단의 병원약국이용이력 조회 endPoint 설정
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/nhisSimpleAuth/retrievecaredesclist");
 
         // Body 추가
