@@ -1,21 +1,20 @@
-const FS = require("fs");
-const Rest = require("../../../../../Tilko.API/REST").Tilko.API.REST;
-const Constant = require("../../../../../UnitTest/Constant").UnitTest.Constant;
+const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
 (function (_Tilko) {
 
     // API 상세설명 URL
-    // https://tilko.net/Help/Api/POST-api-apiVersion-NpsEdi-U040206M01
+    // https://tilko.net/Help/Api/POST-api-apiVersion-Hira-HIRAA050300000100
     
     try {
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
-
-        // 국민연금EDI의 소급분 내역 조회 endPoint 설정
-        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/npsedi/u040206m01");
-
+    
+        // 건강보험심사평가원의 내가 먹는 약 endPoint 설정
+        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/hira/hiraa050300000100");
+    
         // 공동인증서 경로 설정
         const _publicPath = Constant.CertPath + "/signCert.der";
         const _privatePath = Constant.CertPath + "/signPri.key";
@@ -31,11 +30,9 @@ var Tilko = Tilko || {};
         _rest.AddBody("CertFile", _publicCert, true);                   // [암호화] 인증서 공개키(Base64 인코딩)
         _rest.AddBody("KeyFile", _privateKey, true);                    // [암호화] 인증서 개인키(Base64 인코딩)
         _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
-        _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
-        _rest.AddBody("DocNo", "", false);                              // 문서번호
-        _rest.AddBody("ConfirmDt", "", false);                          // 해당년월
-        _rest.AddBody("FmCd", "", false);                               // FmCd
-        _rest.AddBody("RgstChrgpId", "", false);                        // 사업장관리번호
+        _rest.AddBody("IdentityNumber", "", true);                      // [암호화] 주민등록번호(8012151XXXXXX / Base64 인코딩)
+        _rest.AddBody("TelecomCompany", "", false);                     // 통신사 SKT : 0 / KT : 1 / LGT : 2 / SKT알뜰폰 : 3 / KT알뜰폰 : 4 / LGT알뜰폰 : 5 / NA : 6
+        _rest.AddBody("CellphoneNumber", "", true);                     // [암호화] 연락처(010XXXXXXXX / Base64 인코딩)
 
         // API 호출
         const Response = _rest.Call();

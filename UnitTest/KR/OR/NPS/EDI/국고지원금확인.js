@@ -1,20 +1,20 @@
 const FS = require("fs");
-const Rest = require("../../../../../Tilko.API/REST").Tilko.API.REST;
-const Constant = require("../../../../../UnitTest/Constant").UnitTest.Constant;
+const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
 (function (_Tilko) {
 
     // API 상세설명 URL
-    // https://tilko.net/Help/Api/POST-api-apiVersion-Kcomwel-SelectGeunrojaGyIryeok
+    // https://tilko.net/Help/Api/POST-api-apiVersion-NpsEdi-U040209M01
     
     try {
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 고용산재토탈서비스의 근로자 고용정보 현황 조회 endPoint 설정
-        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/kcomwel/selectgeunrojagyiryeok");
+        // 국민연금 EDI의 국고지원금 확인 endPoint 설정
+        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/npsedi/u040209m01");
 
         // 공동인증서 경로 설정
         const _publicPath = Constant.CertPath + "/signCert.der";
@@ -32,14 +32,11 @@ var Tilko = Tilko || {};
         _rest.AddBody("KeyFile", _privateKey, true);                    // [암호화] 인증서 개인키(Base64 인코딩)
         _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
-        _rest.AddBody("UserGroupFlag", "1", false);                     // 인증서 - 사업장(0)/사무대행(1) 구분
-        _rest.AddBody("IndividualFlag", "1", false);                    // 인증서 - 개인(0)/법인(1) 구분
-        _rest.AddBody("GwanriNo", "", false);                           // 관리번호
-        _rest.AddBody("BoheomFg", "", false);                           // 보험구분 - 산재(0)/고용(1)/전체(2)
-        _rest.AddBody("GyStatusCd", "", false);                         // 고용상태 - 고용(0)/고용종료(1)/고용휴직(2)/전체(3)
-        _rest.AddBody("GeunrojaNm", "", false);                         // 근로자 성명
-        _rest.AddBody("GeunrojaRgNo", "", false);                       // 근로자 주민등록번호(13자리)
-        
+        _rest.AddBody("DocNo", "", false);                              // 문서번호
+        _rest.AddBody("ConfirmDt", "", false);                          // 해당년월
+        _rest.AddBody("FmCd", "", false);                               //
+        _rest.AddBody("RgstChrgpId", "", false);                        // 사업장관리번호        
+                
         // API 호출
         const Response = _rest.Call();
         console.log("Response:", Response);

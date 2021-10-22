@@ -13,7 +13,7 @@ var Tilko = Tilko || {};
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 고용산재토탈서비스 일용근로자 고용정보 현황 조회 endPoint 설정
+        // 고용산재토탈서비스의 일용근로자 고용정보 현황 조회 endPoint 설정
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/kcomwel/selectilyonggeunrojainfojohoe");
 
         // 공동인증서 경로 설정

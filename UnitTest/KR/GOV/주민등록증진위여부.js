@@ -7,14 +7,14 @@ var Tilko = Tilko || {};
 (function (_Tilko) {
 
     // API 상세설명 URL
-    // https://tilko.net/Help/Api/POST-api-apiVersion-Nhis-Ggpab003M0105
+    // https://tilko.net/Help/Api/POST-api-apiVersion-Gov-AA090UserJuminCheckResApp
     
     try {
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 건강보험공단의 건강검진내역 endPoint 설정
-        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/nhis/ggpab003m0105");
+        // 정부24의 주민등록증진위여부 endPoint 설정
+        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/gov/aa090userjumincheckresapp");
 
         // 공동인증서 경로 설정
         const _publicPath = Constant.CertPath + "/signCert.der";
@@ -31,7 +31,10 @@ var Tilko = Tilko || {};
         _rest.AddBody("CertFile", _publicCert, true);                   // [암호화] 인증서 공개키(Base64 인코딩)
         _rest.AddBody("KeyFile", _privateKey, true);                    // [암호화] 인증서 개인키(Base64 인코딩)
         _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
-                
+        _rest.AddBody("PersonName", "", false);                         // 조회 대상의 이름
+        _rest.AddBody("IdentityNumber", "", true);                      // [암호화] 조회 대상의 주민등록번호(8012151XXXXXX / Base64 인코딩)
+        _rest.AddBody("PublishDate", "", false);                        // 신분증 발행일(주민등록증 하단 발급기관 위의 발행날짜 / yyyyMMdd)
+        
         // API 호출
         const Response = _rest.Call();
         console.log("Response:", Response);
