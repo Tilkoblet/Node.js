@@ -32,10 +32,10 @@ var Tilko = Tilko || {};
         _rest.AddBody("KeyFile", _privateKey, true);                    // [암호화] 인증서 개인키(Base64 인코딩)
         _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
-        _rest.AddBody("DocNo", "", false);                              // 문서 번호
-        _rest.AddBody("ConfirmDt", "", false);                          // 해당년월
-        _rest.AddBody("FmCd", "", false);                               // FmCd
-        _rest.AddBody("RgstChrgpId", "", false);                        // 사업장관리번호
+        _rest.AddBody("DocNo", "", false);                              // 문서번호(국민연금보험료 결정내역 조회 후 받은 DocNo 값)
+        _rest.AddBody("ConfirmDt", "", false);                          // 해당년월(국민연금보험료 결정내역 조회 후 받은 ConfirmDt 값)
+        _rest.AddBody("FmCd", "", false);                               // 국민연금보험료 결정내역 조회 후 받은 FmCd 값
+        _rest.AddBody("RgstChrgpId", "", false);                        // 사업장관리번호(국민연금보험료 결정내역 조회 후 받은 RgstChrgpId 값)
 
         // API 호출
         const Response = _rest.Call();

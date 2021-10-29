@@ -33,8 +33,8 @@ var Tilko = Tilko || {};
         _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
         _rest.AddBody("IdentityNumber", "", true);                      // [암호화] 검색 할 위임 사업자등록번호(xxxxxxxxxx / Base64 인코딩)
-        _rest.AddBody("FindData", "", false);                           // 위임사업장이름
-        _rest.AddBody("WediUsrId", "", false);                          // WediUsrId
+        _rest.AddBody("FindData", "", false);                           // 위임사업장이름(위임사업장 리스트 조회 후 받은 EdiBsnsBrkgWkplNm 값)
+        _rest.AddBody("WediUsrId", "", false);                          // 위임사업장 리스트 조회 후 받은 WediUsrId 값
 
         // API 호출
         const Response = _rest.Call();
