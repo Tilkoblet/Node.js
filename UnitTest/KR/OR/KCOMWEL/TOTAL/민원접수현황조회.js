@@ -34,9 +34,9 @@ var Tilko = Tilko || {};
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
         _rest.AddBody("UserGroupFlag", "1", false);                     // 인증서 - 사업장(0)/사무대행(1) 구분
         _rest.AddBody("IndividualFlag", "1", false);                    // 인증서 - 개인(0)/법인(1) 구분
-        _rest.AddBody("JeopsuDtFrom", "", false);                       // 접수일(시작 - YYYYMMDD)
-        _rest.AddBody("JeopsuDtTo", "", false);                         // 접수일(종료 - YYYYMMDD)
-        _rest.AddBody("JingsuBosangFg", "", false);                     // 민원접수 종류 - 징수(0)/사대공통서식(1)/일자리(2)
+        _rest.AddBody("JeopsuDtFrom", "20210907", false);               // 접수일(시작 - YYYYMMDD)
+        _rest.AddBody("JeopsuDtTo", "20210907", false);                 // 접수일(종료 - YYYYMMDD)
+        _rest.AddBody("JingsuBosangFg", "1", false);                    // 민원접수 종류 - 징수(0)/사대공통서식(1)/일자리(2)
 
         // API 호출
         const Response = _rest.Call();

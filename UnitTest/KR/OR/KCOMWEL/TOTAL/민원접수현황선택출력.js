@@ -32,12 +32,12 @@ var Tilko = Tilko || {};
         _rest.AddBody("KeyFile", _privateKey, true);                         // [암호화] 인증서 개인키(Base64 인코딩)
         _rest.AddBody("CertPassword", Constant.CertPassword, true);          // [암호화] 인증서 암호(Base64 인코딩)
         _rest.AddBody("BusinessNumber", "", true);                           // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
-        _rest.AddBody("UserGroupFlag", "", false);                       // 인증서 - 사업장(0)/사무대행(1) 구분
+        _rest.AddBody("UserGroupFlag", "", false);                           // 인증서 - 사업장(0)/사무대행(1) 구분
         _rest.AddBody("IndividualFlag", "", false);                          // 인증서 - 개인(0)/법인(1) 구분
-        _rest.AddBody("JeopsuNo", "", false);                                // 민원 접수 번호
-        _rest.AddBody("MinwonDocCd", "", false);                             // 출력 문서 코드
-        _rest.AddBody("ImsiJeopsuNo", "", false);                            //
-        _rest.AddBody("PubapAcptNo", "", false);                             // 
+        _rest.AddBody("JeopsuNo", "", false);                                // 민원 접수 번호(민원접수현황조회 후 받은 JeopsuNo 값)
+        _rest.AddBody("MinwonDocCd", "", false);                             // 출력 문서 코드(민원접수현황조회 후 받은 MinwonDocCd 값)
+        _rest.AddBody("ImsiJeopsuNo", "", false);                            // 민원접수현황조회 후 받은 ImsiJeopsuNo 값
+        _rest.AddBody("PubapAcptNo", "", false);                             // 민원접수현황조회 후 받은 PubapAcptNo 값
      
         // API 호출
         const Response = _rest.Call();
