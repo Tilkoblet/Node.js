@@ -1,6 +1,6 @@
 const FS = require("fs");
-const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
-const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
+const Rest = require("../../../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
