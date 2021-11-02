@@ -26,17 +26,12 @@ var Tilko = Tilko || {};
         _privateKey = FS.readFileSync(_privatePath);
         console.log("_publicCert:", _publicCert);
         console.log("_privateKey:", _privateKey);
-        
+
         // Body 추가
-        _rest.AddBody("NhisQuery", "", false);                   // 검색조건 전체 : 0 / 직장가입자 : 1 / 지역가입자 : 2 / 가입자 전체 : 3
-        _rest.AddBody("CxId", "", false);                        // CxId
-        _rest.AddBody("PrivateAuthType", "", false);             // 인증종류 KakaoTalk / Payco / KbMobile / SamsungPass / TelecomPass
-        _rest.AddBody("ReqTxId", "", false);                     // ReqTxId
-        _rest.AddBody("Token", "", false);                       // Token
-        _rest.AddBody("TxId", "", false);                        // TxId      
-        _rest.AddBody("UserName", "", true);                     // [암호화] 이용자명
-        _rest.AddBody("BirthDate", "", true);                    // [암호화] 생년월일(yyyyMMdd)
-        _rest.AddBody("UserCellphoneNumber", "", true);          // [암호화] 휴대폰번호
+        _rest.AddBody("CertFile", _publicCert, true);                   // [암호화] 인증서 공개키(Base64 인코딩)
+        _rest.AddBody("KeyFile", _privateKey, true);                    // [암호화] 인증서 개인키(Base64 인코딩)
+        _rest.AddBody("CertPassword", Constant.CertPassword, true);     // [암호화] 인증서 암호(Base64 인코딩)
+        _rest.AddBody("NhisQuery", "", false);                          // 검색조건 전체 : 0 / 직장가입자 : 1 / 지역가입자 : 2 / 가입자 전체 : 3
         
         // API 호출
         const Response = _rest.Call();
