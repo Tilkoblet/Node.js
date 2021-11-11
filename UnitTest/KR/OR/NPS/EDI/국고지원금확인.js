@@ -1,6 +1,6 @@
 const FS = require("fs");
-const Rest = require("../../../../Tilko.API/REST").Tilko.API.REST;
-const Constant = require("../../../../UnitTest/Constant").UnitTest.Constant;
+const Rest = require("../../../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
@@ -36,7 +36,7 @@ var Tilko = Tilko || {};
         _rest.AddBody("ConfirmDt", "", false);                          // 해당년월(국민연금보험료 결정내역 조회 후 받은 ConfirmDt 값)
         _rest.AddBody("FmCd", "", false);                               // 국민연금보험료 결정내역 조회 후 받은 FmCd 값
         _rest.AddBody("RgstChrgpId", "", false);                        // 사업장관리번호(국민연금보험료 결정내역 조회 후 받은 RgstChrgpId 값)
-                
+        
         // API 호출
         const Response = _rest.Call();
         console.log("Response:", Response);
