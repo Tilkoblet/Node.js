@@ -19,7 +19,7 @@ var Tilko = Tilko || {};
         // Body 추가
         const ImageBase64 = FS.readFileSync("D:/Temp/test_ocr.jpg", "base64");
         _rest.AddBody("Base64", ImageBase64, true);        // [암호화] 신분증 이미지 Base64
-        _rest.AddBody("LicenseType", "0", true);           // 신분증 구분 주민등록증 : 0 / 운전면허증 : 1 / 외국인등록증 : 2
+        _rest.AddBody("LicenseType", "0", false);          // 신분증 구분 주민등록증 : 0 / 운전면허증 : 1 / 외국인등록증 : 2
     
         // API 호출
         const Response = _rest.Call();
