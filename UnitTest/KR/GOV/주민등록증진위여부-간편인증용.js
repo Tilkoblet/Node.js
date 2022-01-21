@@ -1,6 +1,6 @@
 const FS = require("fs");
-const Rest = require("../../../Tilko.API/RESTLocal").Tilko.API.REST;
-const Constant = require("../../../UnitTest/ConstantLocal").UnitTest.Constant;
+const Rest = require("../../../Tilko.API/REST").Tilko.API.REST;
+const Constant = require("../../../UnitTest/Constant").UnitTest.Constant;
 
 var Tilko = Tilko || {};
 
@@ -14,7 +14,7 @@ var Tilko = Tilko || {};
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 건강보험공단의 건강검진내역 조회 endPoint 설정
+        // 정부24의 주민등록증진위여부 조회 endPoint 설정
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/GovSimpleAuth/AA090UserJuminCheckResApp");
 
         // 간편인증 요청 후 받은 값들
