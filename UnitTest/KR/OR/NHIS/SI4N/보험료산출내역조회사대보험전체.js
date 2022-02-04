@@ -34,7 +34,8 @@ var Tilko = Tilko || {};
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 사업자등록번호(Base64 인코딩)
         _rest.AddBody("Year", "2021", false);                           // 고지년도(yyyy)
         _rest.AddBody("Month", "12", false);                            // 고지월(MM)
-        
+        _rest.AddBody("UserId", "", true);                              // 아이디(로그인시 인증서와 ID가 모두 필요한 경우에만 입력)
+
         // API 호출
         const Response = _rest.Call();
         console.log("Response:", JSON.stringify(Response));
