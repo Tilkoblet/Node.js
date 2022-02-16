@@ -34,11 +34,11 @@ var Tilko = Tilko || {};
         _rest.AddBody("BusinessNumber", "", true);                      // [암호화] 검색 할 사업자등록번호 또는 주민등록번호(xxxxxxxxxx 또는 xxxxxxxxxxxxx / Base64 인코딩)
         _rest.AddBody("StartDate", "", false);                          // 검색 시작일자(yyyyMMdd)
         _rest.AddBody("EndDate", "", false);                            // 검색 종료일자(yyyyMMdd)
-        _rest.AddBody("WediUsrId", "", false);                          // 위임사업장 선택 조회 후 받은 WediUsrId 값
+        _rest.AddBody("WediUsrId", "", false);                          // 위임사업장 선택 조회 후 받은 WediUsrId 값(위임사업장의 경우) 또는 WkplMngtNo 값(내 사업장의 경우)
 
         // API 호출
         const Response = _rest.Call();
-        console.log("Response:", Response);
+        console.log("Response:", JSON.stringify(Response));
     } catch (e) {
         console.error(e);
     }
