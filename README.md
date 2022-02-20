@@ -5,9 +5,9 @@ Node.js 프로젝트의 소스코드입니다.
 ```
 package.json 참조
 
-npm install --save request
-npm install --save node-rsa
-npm install --save sync-request
+npm install request
+npm install node-rsa
+npm install sync-request
 ```
 
 ## 샘플 코드 (API 호출)
