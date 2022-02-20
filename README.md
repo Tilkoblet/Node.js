@@ -3,8 +3,6 @@ Node.js 프로젝트의 소스코드입니다.
 
 ## 모듈 설치
 ```
-package.json 참조
-
 npm install request
 npm install node-rsa
 npm install sync-request
