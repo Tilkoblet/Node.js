@@ -18,14 +18,14 @@ var Tilko = Tilko || {};
 
         // 간편인증 요청 후 받은 값들
         const RequestLogin = {
-            "CxId": "",
-            "PrivateAuthType": "",
-            "ReqTxId": "",
-            "Token": "",
-            "TxId": "",
-            "UserName": "",
-            "BirthDate": "",
-            "UserCellphoneNumber": "",
+            "CxId"                  : "",
+            "ReqTxId"               : "",
+            "PrivateAuthType"       : "",
+            "Token"                 : "",
+            "TxId"                  : "",
+            "UserName"              : "",
+            "BirthDate"             : "",
+            "UserCellphoneNumber"   : "",
         };
 
         // Body 추가

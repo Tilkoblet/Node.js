@@ -13,37 +13,21 @@ var Tilko = Tilko || {};
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
-        // 간편인증 요청 endPoint 설정
-        _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/nhisSimpleAuth/simpleauthrequest");
-
-        // Body 추가
-        _rest.AddBody("PrivateAuthType", "");            // 인증종류 0: 카카오톡 / 1: 페이코 / 2: 국민은행모바일 / 3: 삼성패스 / 4: Pass
-        _rest.AddBody("UserName", "", true);             // [암호화] 이용자명
-        _rest.AddBody("BirthDate", "", true);            // [암호화] 생년월일(yyyyMMdd)
-        _rest.AddBody("UserCellphoneNumber", "", true);  // [암호화] 휴대폰번호
-    
-        // API 호출
-        const ResponseLogin = _rest.Call();
-        console.log("ResponseLogin:", ResponseLogin);
-
-        const RequestLogin = {
-            "CxId": ResponseLogin.ResultData.CxId,
-            "PrivateAuthType": ResponseLogin.ResultData.PrivateAuthType,
-            "ReqTxId": ResponseLogin.ResultData.ReqTxId,
-            "Token": ResponseLogin.ResultData.Token,
-            "TxId": ResponseLogin.ResultData.TxId,
-            "UserName": ResponseLogin.ResultData.UserName,
-            "BirthDate": ResponseLogin.ResultData.BirthDate,
-            "UserCellphoneNumber": ResponseLogin.ResultData.UserCellphoneNumber,
-        };
-        
-        // 간편인증 응답 및 로그인 처리(모바일에서 인증 완료 후, 진행하셔야 합니다.)
-        _rest = new Rest(Constant.ApiKey);
-        _rest.Init();
-
         // 건강보험공단의 건강검진내역 조회 endPoint 설정
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/nhisSimpleAuth/ggpab003m0105");
 
+        // 간편인증 요청 후 받은 값들
+        const RequestLogin = {
+            "CxId"                  : "",
+            "ReqTxId"               : "",
+            "PrivateAuthType"       : "",
+            "Token"                 : "",
+            "TxId"                  : "",
+            "UserName"              : "",
+            "BirthDate"             : "",
+            "UserCellphoneNumber"   : "",
+        };
+        
         // Body 추가
         _rest.AddBody("CxId", RequestLogin.CxId, false);                                // 간편인증 응답의 CxId 값
         _rest.AddBody("PrivateAuthType", RequestLogin.PrivateAuthType, false);          // 간편인증 응답의 PrivateAuthType 값

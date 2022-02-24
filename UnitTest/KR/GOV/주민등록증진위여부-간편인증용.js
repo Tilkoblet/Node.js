@@ -10,7 +10,6 @@ var Tilko = Tilko || {};
     // https://tilko.net/Help/Api/POST-api-apiVersion-GovSimpleAuth-AA090UserJuminCheckResApp
     
     try {
-        // 간편인증 응답 및 로그인 처리(모바일에서 인증 완료 후, 진행하셔야 합니다.)
         let _rest = new Rest(Constant.ApiKey);
         _rest.Init();
 
@@ -19,14 +18,14 @@ var Tilko = Tilko || {};
 
         // 간편인증 요청 후 받은 값들
         const RequestLogin = {
-            "CxId": "",
-            "PrivateAuthType": "",
-            "ReqTxId": "",
-            "Token": "",
-            "TxId": "",
-            "UserName": "",
-            "BirthDate": "",
-            "UserCellphoneNumber": "",
+            "CxId"                  : "",
+            "ReqTxId"               : "",
+            "PrivateAuthType"       : "",
+            "Token"                 : "",
+            "TxId"                  : "",
+            "UserName"              : "",
+            "BirthDate"             : "",
+            "UserCellphoneNumber"   : "",
         };
 
         // Body 추가
@@ -38,13 +37,13 @@ var Tilko = Tilko || {};
         _rest.AddBody("UserName", RequestLogin.UserName, true);                         // [암호화] 간편인증 요청 후 받은 UserName 값
         _rest.AddBody("BirthDate", RequestLogin.BirthDate, true);                       // [암호화] 간편인증 요청 후 받은 BirthDate 값
         _rest.AddBody("UserCellphoneNumber", RequestLogin.UserCellphoneNumber, true);   // [암호화] 간편인증 요청 후 받은 UserCellphoneNumber 값
-        _rest.AddBody("PersonName", "김길동", true);                                    // [암호화] 조회 대상자의 성명
-        _rest.AddBody("IdentityNumber", "9012311234567", true);                         // [암호화] 조회 대상자의 주민등록번호(9001011234567)
-        _rest.AddBody("PublishDate", "20200101", false);                                // 주민등록증 발행일(yyyyMMdd)
+        _rest.AddBody("PersonName", "", true);                          // [암호화] 조회 대상자의 성명
+        _rest.AddBody("IdentityNumber", "", true);                      // [암호화] 조회 대상자의 주민등록번호(9001011234567)
+        _rest.AddBody("PublishDate", "", false);                        // 주민등록증 발행일(yyyyMMdd)
 
         // API 호출
         const Response = _rest.Call();
-        console.log("Response:", Response);
+        console.log("Response:", JSON.stringify(Response));
     } catch (e) {
         console.error(e);
     }
