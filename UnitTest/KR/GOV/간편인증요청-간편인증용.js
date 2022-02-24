@@ -17,7 +17,7 @@ var Tilko = Tilko || {};
         _rest.SetEndPointUrl(Constant.ApiHost + "api/v1.0/GovSimpleAuth/SimpleAuthRequest");
 
         // Body 추가
-        _rest.AddBody("PrivateAuthType", "0");                      // 인증종류 0: 카카오톡 / 1: 페이코 / 2: 국민은행모바일 / 3: 삼성패스 / 4: 통신사Pass / 5: 신한카드 / 6: 네이버
+        _rest.AddBody("PrivateAuthType", "0");                      // 인증종류 0: 카카오톡 / 1: 페이코 / 2: 국민은행모바일 / 3: 삼성패스 / 4: 통신사Pass / 5: 신한 / 6: 네이버
         _rest.AddBody("UserName", "", true);                        // [암호화] 이용자명
         _rest.AddBody("BirthDate", "", true);                       // [암호화] 생년월일(yyyyMMdd)
         _rest.AddBody("UserCellphoneNumber", "", true);             // [암호화] 휴대폰번호
