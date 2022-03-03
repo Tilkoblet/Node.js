@@ -84,4 +84,4 @@ console.log("res:", res.getBody("utf8"));
 
 
 // 바이너리 파일 저장
-FS.writeFileSync("D:\\captcha.png", Buffer.from(Response.Result.CaptchaImage, "base64"));
+FS.writeFileSync("D:\\captcha.png", Buffer.from(JSON.parse(res.getBody("utf-8")).Result.CaptchaImage, "base64"));
