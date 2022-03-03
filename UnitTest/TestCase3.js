@@ -59,7 +59,7 @@ const url       = apiHost + "api/v1.0/Gov/AA090UserJuminCheckResApp";
 
 
 // 인증서 경로 설정
-const certPath  = "C:\\Users\\userame\\AppData\\LocalLow\\NPKI\\yessign\\USER\\user01\\";
+const certPath  = "C:\\Users\\username\\AppData\\LocalLow\\NPKI\\yessign\\USER\\user01\\";
 const certFile  = certPath + "signCert.der";
 const keyFile   = certPath + "signPri.key";
 
