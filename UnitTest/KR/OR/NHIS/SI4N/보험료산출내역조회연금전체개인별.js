@@ -35,6 +35,7 @@ var Tilko = Tilko || {};
         _rest.AddBody("Year", "2021", false);                           // 고지년도(yyyy)
         _rest.AddBody("Month", "12", false);                            // 고지월(MM)
         _rest.AddBody("UserId", "", true);                              // 아이디(로그인시 인증서와 ID가 모두 필요한 경우에만 입력)
+        _rest.AddBody("CertType", "0", false);                          // 인증서 종류 - 기본값 0: 사업자인증서(개인사업자, 법인사업자), 1: 대표자 개인인증서(개인사업자)
         
         // API 호출
         const Response = _rest.Call();
