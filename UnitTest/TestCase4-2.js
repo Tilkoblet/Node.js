@@ -82,7 +82,7 @@ const options   = {
     json: {
         "PersonName"            : aesEncrypt(aesKey, aesIv, "홍길동"),
         "IdentityNumber"        : aesEncrypt(aesKey, aesIv, "8801011234567"),
-        "PublishDate"           : "19880101",
+        "PublishDate"           : "20220101",
         "CxId"                  : reqData.CxId,
         "PrivateAuthType"       : reqData.PrivateAuthType,
         "ReqTxId"               : reqData.ReqTxId,
