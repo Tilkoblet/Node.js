@@ -8,6 +8,16 @@ npm install node-rsa
 npm install sync-request
 ```
 
+## 데이터 형태별 샘플 코드
+|파일명|설명|API예시|
+|---|---|---|
+|UnitTest/TestCase1.js|인증서 필요 없음, 파라미터 암호화 필요 없음|인터넷등기소 등기물건 주소검색|
+|UnitTest/TestCase2.js|인증서 필요 없음, 파라미터 암호화 필요함|Credit4u 가입여부 확인|
+|UnitTest/TestCase3.js|인증서 필요함|정부24 주민등록진위여부|
+|UnitTest/TestCase4-1.js|간편인증 요청|국민건강보험공단 간편인증 요청|
+|UnitTest/TestCase4-2.js|간편인증용 API 호출|국민건강보험공단 건강검진내역|
+|UnitTest/TestCase5.js|바이너리 데이터 저장|인터넷등기소 등기부등본 PDF 발급|
+
 ## 샘플 코드 (API 호출)
 ```javascript
 const FS = require("fs");
