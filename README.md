@@ -12,7 +12,7 @@ npm install sync-request
 |파일명|설명|API 예시|
 |---|---|---|
 |UnitTest/TestCase1.js|인증서 필요 없음, 파라미터 암호화 필요 없음|인터넷등기소 등기물건 주소검색|
-|UnitTest/TestCase2.js|인증서 필요 없음, 파라미터 암호화 필요함|운전면허진위여부|
+|UnitTest/TestCase2.js|인증서 필요 없음, 파라미터 암호화 필요함|경찰청교통민원24 운전면허진위여부|
 |UnitTest/TestCase3.js|인증서 필요함|정부24 주민등록진위여부|
 |UnitTest/TestCase4-1.js|간편인증 요청|국민건강보험공단 간편인증 요청|
 |UnitTest/TestCase4-2.js|간편인증용 API 호출|국민건강보험공단 건강검진내역|
