@@ -16,7 +16,7 @@ npm install sync-request
 |UnitTest/TestCase3.js|인증서 필요함|정부24 주민등록진위여부|
 |UnitTest/TestCase4-1.js|간편인증 요청|국민건강보험공단 간편인증 요청|
 |UnitTest/TestCase4-2.js|간편인증용 API 호출|국민건강보험공단 건강검진내역|
-|UnitTest/TestCase5.js|바이너리 데이터를 파일로 저장|인터넷등기소 등기부등본 PDF 발급|
+|UnitTest/TestCase5.js|바이너리 데이터를 파일로 저장|정부24 건축물대장 발급|
 
 ## 샘플 코드 (API 호출)
 ```javascript
